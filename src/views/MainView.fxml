@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TabPane prefHeight="800.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="ROOMS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="roomListView" layoutX="39.0" layoutY="142.0" prefHeight="531.0" prefWidth="522.0" />
+                        <Text layoutX="103.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Number" />
+                        <TextField fx:id="searchRoomText" layoutX="226.0" layoutY="78.0" />
+                        <Button fx:id="searchRoomButton" layoutX="382.0" layoutY="78.0" mnemonicParsing="false" onAction="#searchRoom" text="Search" />
+                        <Button fx:id="showRoomButton" layoutX="265.0" layoutY="697.0" mnemonicParsing="false" onAction="#showRoomInfo" text="Room Info" />
+                        <Text layoutX="65.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room number" />
+                        <Text layoutX="418.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+                        <Text layoutX="226.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of beds" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="BOOKING">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <DatePicker fx:id="bookingStartDate" layoutX="221.0" layoutY="279.0" />
+                        <DatePicker fx:id="bookingEndDate" layoutX="221.0" layoutY="324.0" />
+                        <Text layoutX="87.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room number" />
+                        <Text layoutX="87.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text layoutX="87.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
+                        <Text layoutX="87.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+                        <TextField fx:id="bookingRoomNumber" layoutX="221.0" layoutY="99.0" />
+                        <TextField fx:id="bookingName" layoutX="221.0" layoutY="144.0" />
+                        <TextField fx:id="bookingSurname" layoutX="221.0" layoutY="189.0" />
+                        <Text layoutX="87.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Date" />
+                        <Text layoutX="87.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ending Date" />
+                        <TextField fx:id="bookingPhoneNumber" layoutX="221.0" layoutY="234.0" />
+                        <Button fx:id="bookButton" layoutX="308.0" layoutY="388.0" mnemonicParsing="false" onAction="#bookNow" prefHeight="25.0" prefWidth="100.0" text="Book" />
+                        <Text fill="#2bc635" layoutX="85.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have successfully booked your stay" visible="false" wrappingWidth="214.13671875" />
+                        <Button fx:id="findRoomForBookingBtn" layoutX="85.0" layoutY="388.0" mnemonicParsing="false" onAction="#findRooms" prefHeight="25.0" prefWidth="100.0" text="Find Room" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="CHECK-IN">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="checkInBookingListView" layoutX="34.0" layoutY="121.0" prefHeight="563.0" prefWidth="532.0" />
+                        <Button fx:id="checkInBookingSearchBtn" layoutX="395.0" layoutY="40.0" mnemonicParsing="false" onAction="#searchCheckInBooking" text="Search" />
+                        <Text layoutX="56.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Surname" />
+                        <TextField fx:id="checkInCustomerSurname" layoutX="199.0" layoutY="40.0" />
+                        <Button fx:id="checkInBtn" layoutX="250.0" layoutY="705.0" mnemonicParsing="false" onAction="#checkInBooking" prefHeight="25.0" prefWidth="100.0" text="Check-in" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="CHECK-OUT">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="checkOutBookingListView" layoutX="34.0" layoutY="121.0" prefHeight="563.0" prefWidth="532.0" />
+                        <Button fx:id="checkOutBookingSearchBtn" layoutX="395.0" layoutY="40.0" mnemonicParsing="false" onAction="#searchCheckOutBooking" text="Search" />
+                        <Text layoutX="56.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Surname" />
+                        <TextField fx:id="checkOutCustomerSurname" layoutX="199.0" layoutY="40.0" />
+                        <Button fx:id="checkOutBtn" layoutX="250.0" layoutY="705.0" mnemonicParsing="false" onAction="#checkOutBooking" prefHeight="25.0" prefWidth="100.0" text="Check-out" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="CANCEL">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="cancelBookingListView" layoutX="34.0" layoutY="121.0" prefHeight="563.0" prefWidth="532.0" />
+                        <Button fx:id="cancelBookingBtn" layoutX="250.0" layoutY="705.0" mnemonicParsing="false" onAction="#cancelBooking" text="Cancel booking" />
+                        <Button fx:id="cancelBookingSearchBtn" layoutX="395.0" layoutY="40.0" mnemonicParsing="false" onAction="#searchCancelBooking" text="Search" />
+                        <Text layoutX="56.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Surname" />
+                        <TextField fx:id="cancelBookingSurname" layoutX="199.0" layoutY="40.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="CONFIGURATION">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="hotelPane" layoutX="59.0" layoutY="103.0" prefHeight="615.0" prefWidth="490.0" style="-fx-background-color: white; -fx-border-color: grey;">
+                           <children>
+                              <Text layoutX="59.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room number" />
+                              <TextField fx:id="addRoomNumber" layoutX="227.0" layoutY="102.0" />
+                              <Text layoutX="59.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of beds" />
+                              <TextField fx:id="addRoomBeds" layoutX="227.0" layoutY="159.0" />
+                              <Button fx:id="addRoomButton" layoutX="227.0" layoutY="208.0" mnemonicParsing="false" onAction="#addRoom" text="Add room" />
+                              <Button fx:id="importButton" layoutX="133.0" layoutY="378.0" mnemonicParsing="false" onAction="#importFromConfig" prefHeight="42.0" prefWidth="188.0" text="Import hotel from config file" />
+                              <Button fx:id="serializeBtn" layoutX="201.0" layoutY="505.0" mnemonicParsing="false" onAction="#serializeHotel" text="Serialize" />
+                           </children></Pane>
+                        <Pane fx:id="pricePane" layoutX="59.0" layoutY="103.0" prefHeight="615.0" prefWidth="490.0" style="-fx-background-color: white; -fx-border-color: grey;" visible="false">
+                           <children>
+                              <Text layoutX="75.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summer" />
+                              <Text layoutX="75.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spring" />
+                              <Text layoutX="75.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fall" />
+                              <Text layoutX="75.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winter" />
+                              <Text layoutX="75.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Date" />
+                              <Text layoutX="75.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ending Date" />
+                              <Text layoutX="75.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price per night" />
+                              <TextField fx:id="summerPrice" layoutX="185.0" layoutY="90.0" />
+                              <TextField fx:id="springPrice" layoutX="185.0" layoutY="135.0" />
+                              <TextField fx:id="fallPrice" layoutX="185.0" layoutY="180.0" />
+                              <TextField fx:id="winterPrice" layoutX="185.0" layoutY="225.0" />
+                              <TextField fx:id="discountPeriodPrice" layoutX="185.0" layoutY="479.0" />
+                              <DatePicker fx:id="discountPeriodStart" layoutX="186.0" layoutY="387.0" />
+                              <DatePicker fx:id="discountPeriodEnd" layoutX="186.0" layoutY="432.0" />
+                              <Label layoutX="185.0" layoutY="21.0" style="-fx-font-size: 20;" text="Season prices" textAlignment="CENTER" />
+                              <Label layoutX="150.0" layoutY="328.0" style="-fx-font-size: 20;" text="Add discount period" textAlignment="CENTER" />
+                              <Button fx:id="saveSeasonPricesChangesBtn" layoutX="171.0" layoutY="275.0" mnemonicParsing="false" onAction="#saveSeasonalChanges" text="Save changes" />
+                              <Button fx:id="addDiscountPeriodBtn" layoutX="196.0" layoutY="541.0" mnemonicParsing="false" onAction="#addDiscountPeriod" text="Add" />
+                           </children></Pane>
+                        <Button fx:id="hotelConfigButton" layoutX="59.0" layoutY="44.0" mnemonicParsing="false" onAction="#hotelConfigPane" prefHeight="25.0" prefWidth="105.0" text="Hotel" />
+                        <Button fx:id="priceConfigButton" layoutX="444.0" layoutY="44.0" mnemonicParsing="false" onAction="#priceConfigPane" prefHeight="25.0" prefWidth="105.0" text="Price" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</GridPane>
